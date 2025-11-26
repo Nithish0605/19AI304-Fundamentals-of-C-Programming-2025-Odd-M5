@@ -39,7 +39,47 @@
 ### Step 12: 
   Stop
 # Program:
+```
+#include <stdio.h>
+
+void swapv(int x, int y) {  
+    int temp = x;  
+    x = y;  
+    y = temp;  
+    printf("Inside swapv (Call by Value): x = %d, y = %d\n", x, y);
+}
+
+void swapr(int *x, int *y) {  
+    int temp = *x;  
+    *x = *y;  
+    *y = temp;  
+    printf("Inside swapr (Call by Reference): a = %d, b = %d\n", *x, *y);
+}
+
+int main() {  
+    int a = 10, b = 20;
+
+    printf("Before swapv: a = %d, b = %d\n", a, b);
+    swapv(a, b);
+    printf("After swapv: a = %d, b = %d\n", a, b);
+
+    printf("\nBefore swapr: a = %d, b = %d\n", a, b);
+    swapr(&a, &b);
+    printf("After swapr: a = %d, b = %d\n", a, b);
+
+    return 0;
+}
+```
 # Output:
+```
+Before swapv: a = 10, b = 20
+Inside swapv (Call by Value): x = 20, y = 10
+After swapv: a = 10, b = 20
+
+Before swapr: a = 10, b = 20
+Inside swapr (Call by Reference): a = 20, b = 10
+After swapr: a = 20, b = 10
+```
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -77,7 +117,38 @@
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+int fibo(int x) {
+    if (x == 0)
+        return 0;
+    else if (x == 1)
+        return 1;
+    else
+        return fibo(x - 1) + fibo(x - 2);
+}
+
+int main() {
+    int n, i;
+
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci series of %d terms:\n", n);
+    for (i = 0; i < n; i++) {
+        printf("%d ", fibo(i));
+    }
+
+    return 0;
+}
+```
 # Output:
+```
+Enter number of terms: 7
+Fibonacci series of 7 terms:
+0 1 1 2 3 5 8
+```
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -119,7 +190,31 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 12:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+int fact(int n) {
+    if (n == 0)
+        return 1;
+    else
+        return n * fact(n - 1);
+}
+
+int main() {
+    int n;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    printf("Factorial of %d = %d\n", n, fact(n));
+    return 0;
+}
+```
 # Output:
+```
+Enter a number: 5
+Factorial of 5 = 120
+```
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -161,7 +256,39 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 11:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+int main() {
+    int a[50], n, i, sum = 0;
+    int *p;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    p = a;  // Pointer to array
+
+    for (i = 0; i < n; i++) {
+        sum += *(p + i);  // Pointer arithmetic
+    }
+
+    printf("Sum of array elements = %d\n", sum);
+
+    return 0;
+}
+```
 # Output:
+```
+Enter number of elements: 5
+Enter 5 elements:
+10 20 30 40 50
+Sum of array elements = 150
+```
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -197,6 +324,33 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 10:
   Stop
 # Program:
+```
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    char *p;
+    int length = 0;
+
+    printf("Enter a string: ");
+    gets(str);
+
+    p = str; // pointer to string
+
+    while (*p != '\0') {
+        length++;
+        p++; // move pointer
+    }
+
+    printf("Length of the string = %d\n", length);
+
+    return 0;
+}
+```
 # Output:
+```
+Enter a string: hello world
+Length of the string = 11
+```
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
